@@ -136,7 +136,7 @@ PCF8566 lcd(0x3e);
 
 void setup() {
   // put your setup code here, to run once:
-  delay(1000);
+  delay(1000); // Ensure the LCD has time to boot; per datasheet
   Serial.begin(9600);
   Wire.begin();
   lcd.init();
