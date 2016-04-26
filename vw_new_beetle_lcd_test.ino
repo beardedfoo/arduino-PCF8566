@@ -105,7 +105,7 @@ class PCF8566 {
       _endMsg();
     }
     
-    void testPattern(unsigned char buf[12]) {
+    void setMemory(unsigned char buf[12]) {
       _startMsg();
       _write(PCF_CMD_SELECT_DEVICE(0) | PCF_CONTINUE);
       _write(PCF_CMD_LOAD_DATA_POINTER(0));
@@ -154,7 +154,7 @@ void loop() {
       }
       buf[enableByte] = 1 << enableBit;
   
-      lcd.testPattern(buf);
+      lcd.setMemory(buf);
       
       Serial.print("Enabled bit ");
       Serial.println(enableBit);
