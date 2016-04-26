@@ -16,13 +16,15 @@ The LCD module of the instrument cluster is a well-packaged NXT PFC8566T IC.
 There are 6-pins that connect the LCD module to the main board of the instrument
 cluster. When viewed with the pins up and the IC on the left the module pinouts
 are as follows:
-                              
+                         
+                         
   (Uncomfirmed pinouts, models may vary. Verify before use!!)
-      
-                                  o   o   o
+        
+         Notch on IC
+              |
+              v                   o   o   o
         |=====|_|====|            |   |   |
-        |            |      Pins: A   B   C
-        |     P      |
+        |     P      |      Pins: A   B   C
         |     F      |
         |     C      |
         |     8      |
@@ -37,6 +39,7 @@ Pin C = +5 Volts
 Pin D = Ground
 Pin E = +12 Volts (optional, for LCD backlights only)
 Pin F = Ground 
+
 
 The I2C communication between the boards follows the specifications
 in the PFC8566 data sheet, with the notable exception that the I2C
