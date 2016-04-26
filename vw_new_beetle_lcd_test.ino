@@ -135,7 +135,6 @@ class PCF8566 {
 PCF8566 lcd(0x3e);
 
 void setup() {
-  // put your setup code here, to run once:
   delay(1000); // Ensure the LCD has time to boot; per datasheet
   Serial.begin(9600);
   Wire.begin();
@@ -145,7 +144,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   unsigned char buf[12];
   for (int enableByte=1; enableByte < 11; enableByte++) {
     Serial.print("Testing byte ");
