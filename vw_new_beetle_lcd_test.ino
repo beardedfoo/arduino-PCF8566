@@ -74,7 +74,7 @@ ground. The instrument cluster has a builtin +5v voltage regulator.
 #define PCF_MODE_MULTIPLEX_4 0 // Multiplex 1:4
 #define PCF_MODE_STATIC 1
 
-#define PCF_CMD_SELECT_DEVICE(devNum) (((1 << 6) | (1 << 5)) & (devNum & 0x1f))
+#define PCF_CMD_SELECT_DEVICE(devNum) (((1 << 6) | (1 << 5)) | (devNum & 0x1f))
 
 #define PCF_CMD_SELECT_BANK ((1 << 6) | (1 << 5) | (1 << 4) | (1 << 3) | (1 << 1))
 
