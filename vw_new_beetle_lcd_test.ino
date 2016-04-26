@@ -5,7 +5,7 @@ Author: Cyle Riggs <beardedfoo@gmail.com>
 This is a program to test connectivity with the LCD display module of the
 VW "New Beetle" instrument cluster / dashboard. It was tested and developed
 with an instrument cluster from a 1999 model year, but should work with all
-'98-'11 instrument cluster LCD modules.
+1998-2011 New Beetle instrument cluster LCD modules.
 
 The instrument cluster of the New Beetle is separated into two boards which
 have an I2C bus connecting between them. One board is the primary board with
