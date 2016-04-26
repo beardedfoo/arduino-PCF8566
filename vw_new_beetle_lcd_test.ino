@@ -114,6 +114,31 @@ class PCF8566 {
       }
       _endMsg();
     }
+
+    /*
+      Enable the display memory bit by bit while printing the
+      status to the serial monitor. Cycle through the display bits
+      as carriage returns are sent on the serial monitor.
+    */
+    void testPattern() {
+      unsigned char buf[12];
+      for (int enableByte=0; enableByte < 12; enableByte++) {
+        Serial.print("Testing byte ");
+        Serial.println(enableByte);
+        for (int enableBit=0; enableBit < 8; enableBit++) {
+          for (int fill=0; fill<12; fill++) {
+            buf[fill] = 0x00;
+          }
+          buf[enableByte] = 1 << enableBit;
+    
+          setMemory(buf);
+      
+          Serial.print("Enabled bit ");
+          Serial.println(enableBit);
+          while (Serial.read() != '\r') {}
+        }
+      }
+    }
     
     void _write(unsigned char msg) {
       int wrote = Wire.write(msg);
@@ -144,21 +169,5 @@ void setup() {
 }
 
 void loop() {
-  unsigned char buf[12];
-  for (int enableByte=1; enableByte < 11; enableByte++) {
-    Serial.print("Testing byte ");
-    Serial.println(enableByte);
-    for (int enableBit=0; enableBit < 8; enableBit++) {
-      for (int fill=0; fill<12; fill++) {
-        buf[fill] = 0x00;
-      }
-      buf[enableByte] = 1 << enableBit;
-  
-      lcd.setMemory(buf);
-      
-      Serial.print("Enabled bit ");
-      Serial.println(enableBit);
-      while (Serial.read() != '\r') {}
-    }
-  }
+  lcd.testPattern();
 }
