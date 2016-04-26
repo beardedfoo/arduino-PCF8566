@@ -1,3 +1,37 @@
+/*
+
+This is a program to test connectivity with the LCD display module of the
+VW "New Beetle" instrument cluster. It was tested and developed with an
+instrument cluster from a 1999 model year, but should work with all '98-'11
+intrument cluster LCD modules.
+
+The LCD module of the instrument cluster is a well-packaged NXT PFC8566T. There
+are 6-pins that connect the LCD module to the main board of the instrument cluster.
+When viewed from the IC-side of the board, with the pins up the pins are as follows:
+                              
+  (Uncomfirmed pinouts, models may vary, verify before use!!)
+      
+                                  o   o   o
+        |=====|_|====|            |   |   |
+        |            |      Pins: A   B   C
+        |     P      |
+        |     F      |
+        |     C      |
+        |     8      |
+        |     5      |
+        |     6      |      Pins: D   E   F
+        |     6      |            |   |   |
+        |============|            o   o   o
+
+Pin A = SCL
+Pin B = SDA
+Pin C = +5 Volts
+Pin D = Ground
+Pin E = +12 Volts
+Pin F = Ground
+
+*/
+
 #include <Wire.h>
 
 #define PCF_CONTINUE (1 << 7)
