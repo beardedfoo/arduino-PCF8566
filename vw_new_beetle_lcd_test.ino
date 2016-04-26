@@ -5,11 +5,17 @@ VW "New Beetle" instrument cluster. It was tested and developed with an
 instrument cluster from a 1999 model year, but should work with all '98-'11
 intrument cluster LCD modules.
 
-The LCD module of the instrument cluster is a well-packaged NXT PFC8566T. There
-are 6-pins that connect the LCD module to the main board of the instrument cluster.
-When viewed from the IC-side of the board, with the pins up the pins are as follows:
+The instrument cluster of the New Beetle is separated into two boards which
+have an I2C bus connecting between them. One board is the primary board with
+the LED's and gauges on it, and the other controls only the odometer/tripometer
+LCD at the base of the speedometer.
+
+The LCD module of the instrument cluster is a well-packaged NXT PFC8566T IC.
+There are 6-pins that connect the LCD module to the main board of the instrument
+cluster. When viewed from the IC-side of the board, with the pins up the pins are
+as follows:
                               
-  (Uncomfirmed pinouts, models may vary, verify before use!!)
+  (Uncomfirmed pinouts, models may vary. Verify before use!!)
       
                                   o   o   o
         |=====|_|====|            |   |   |
@@ -27,8 +33,28 @@ Pin A = SCL
 Pin B = SDA
 Pin C = +5 Volts
 Pin D = Ground
-Pin E = +12 Volts
-Pin F = Ground
+Pin E = +12 Volts (optional, for LCD backlights only)
+Pin F = Ground 
+
+The I2C communication between the boards follows the specifications
+in the PFC8566 data sheet, with the notable exception that the I2C
+slave address differs from the PFC8566 specifications.
+
+To run this on an arduino connect the SCL, SDA, 5v, and GND lines from
+the arduino to the LCD module. To run the unit while uninstalled this
+can be achieved with some female to male jumper cables.
+
+The LCD module can also be ran by an arduino while installed in the
+instrument cluster if you bend SDA and SCL pins such that they no longer
+insert into the main board of the cluster and solder some wires to them.
+To pass the I2C wires to the back of the cluster drill some holes through the
+main board of the instrument cluster and through the white backing plate
+of the cluster. The ground and +12v must be shared between the arduino and
+the cluster gauge.
+
++12v and ground can be obtained/supplied at the blue connector on the back of
+the instrument cluster. Pin 23 on the blue connector is +12v and pin 24 is
+ground. The instrument cluster has a builtin +5v voltage regulator.
 
 */
 
