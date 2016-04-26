@@ -12,8 +12,8 @@ LCD at the base of the speedometer.
 
 The LCD module of the instrument cluster is a well-packaged NXT PFC8566T IC.
 There are 6-pins that connect the LCD module to the main board of the instrument
-cluster. When viewed from the IC-side of the board, with the pins up the pins are
-as follows:
+cluster. When viewed with the pins up and the IC on the left the module pinouts
+are as follows:
                               
   (Uncomfirmed pinouts, models may vary. Verify before use!!)
       
@@ -38,7 +38,9 @@ Pin F = Ground
 
 The I2C communication between the boards follows the specifications
 in the PFC8566 data sheet, with the notable exception that the I2C
-slave address differs from the PFC8566 specifications.
+slave address differs from the PFC8566 specifications. This can be confirmed
+by scanning the I2C bus on your arduino after connecting all the lines; many
+i2c scanners are available online.
 
 To run this on an arduino connect the SCL, SDA, 5v, and GND lines from
 the arduino to the LCD module. To run the unit while uninstalled this
