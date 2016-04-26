@@ -116,17 +116,10 @@ class PCF8566 {
     }
     
     void _write(unsigned char msg) {
-      //Serial.print("i2c write: ");
-      //Serial.println(msg, BIN);
       int wrote = Wire.write(msg);
-      //Serial.print("Wrote ");
-      //Serial.print(wrote);
-      //Serial.println(" bytes");
     }
     
     void _startMsg() {
-      //Serial.print("Starting i2c msg to ");
-      //Serial.println(i2cSlave, HEX);
       Wire.beginTransmission(i2cSlave);
     }
     
