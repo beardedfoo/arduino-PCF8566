@@ -74,7 +74,7 @@ so it's possible that this occurs when voltage drops below expected in-car value
 -It's not clear to me how you might change the address of a given LCD module. Without
 this only one display could be attached to the I2C bus at a time. The PFC8566 itself has
 the ability for a cascading arrangment behind a single I2C address, but it's not clear
-how if this could be setup using the circuit present on the VW cluster. At present a
+if this could be setup using the circuit present on the VW cluster. At present a
 single device limitation seems unavoidable when using the VW lcd module with arduino.
 
 */
