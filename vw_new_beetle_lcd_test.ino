@@ -25,8 +25,8 @@ are as follows:
               v                   o   o   o
         |=====|_|====|            |   |   |
         |     P      |      Pins: A   B   C
-        |     F      |
         |     C      |
+        |     F      |
         |     8      |
         |     5      |
         |     6      |      Pins: D   E   F
