@@ -12,7 +12,7 @@ have an I2C bus connecting between them. One board is the primary board with
 the LED's and gauges on it, and the other controls only the odometer/tripometer
 LCD at the base of the speedometer.
 
-The LCD module of the instrument cluster is a well-packaged NXT PFC8566T IC.
+The LCD module of the instrument cluster is a well-packaged NXT PCF8566T IC.
 There are 6-pins that connect the LCD module to the main board of the instrument
 cluster. When viewed with the pins up and the IC on the left the module pinouts
 are as follows:
