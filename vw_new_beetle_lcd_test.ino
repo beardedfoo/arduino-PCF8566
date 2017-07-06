@@ -42,8 +42,8 @@ Pin F = Ground
 
 
 The I2C communication between the boards follows the specifications
-in the PFC8566 data sheet, with the notable exception that the I2C
-slave address differs from the PFC8566 specifications. This can be confirmed
+in the PCF8566 data sheet, with the notable exception that the I2C
+slave address differs from the PCF8566 specifications. This can be confirmed
 by scanning the I2C bus on your arduino after connecting all the lines; many
 i2c scanners are available online.
 
@@ -72,7 +72,7 @@ isolation. The contrast is set according to a voltage divider resistor circuit,
 so it's possible that this occurs when voltage drops below expected in-car values.
 
 -It's not clear to me how you might change the address of a given LCD module. Without
-this only one display could be attached to the I2C bus at a time. The PFC8566 itself has
+this only one display could be attached to the I2C bus at a time. The PCF8566 itself has
 the ability for a cascading arrangment behind a single I2C address, but it's not clear
 if this could be setup using the circuit present on the VW cluster. At present a
 single device limitation seems unavoidable when using the VW lcd module with arduino.
