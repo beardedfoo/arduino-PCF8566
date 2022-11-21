@@ -66,7 +66,7 @@ ground. The instrument cluster has a builtin +5v voltage regulator.
 
 Known Issues:
 
--The constast is statically set by VW on the LCD module, but I have seen
+-The contrast is statically set by VW on the LCD module, but I have seen
 the contrast differ from the in-car setting while running the LCD module in
 isolation. The contrast is set according to a voltage divider resistor circuit,
 so it's possible that this occurs when voltage drops below expected in-car values.
